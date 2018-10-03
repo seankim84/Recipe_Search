@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #282c34;
+  
+}
+
+.App-title {
+  color: white;
+  font-size: 2.4em;
+}
