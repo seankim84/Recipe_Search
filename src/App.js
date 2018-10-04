@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Axios from 'axios';
 import './App.css';
 import Form from './components/Form';
 import Recipes from './components/Recipes';
@@ -15,12 +16,10 @@ class App extends Component {
   getRecipe = async (e) => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-    const api_call = await fetch(
-      `https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=30`);
-    
-    const data = await api_call.json();
-    this.setState({recipes: data.recipes});
-    console.log(this.state.recipes);
+   await Axios.get(
+      `https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=30`)
+    .then(res => this.setState({recipes: res.data.recipes}))
+    .catch(err => console.log(err))
   }
 
   render() {

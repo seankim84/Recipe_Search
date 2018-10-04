@@ -1,7 +1,9 @@
 import React from 'react';
+import "../App.css";
+
 
 const Recipes = props => (
-    <div>
+    <div  className="recipes" >
         {props.recipes.map((recipe) => {
             return (
                 <div key={recipe.recipe_id}>
