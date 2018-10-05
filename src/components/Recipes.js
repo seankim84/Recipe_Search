@@ -1,5 +1,6 @@
 import React from 'react';
 import "../App.css";
+import { Link } from 'react-router-dom';
 
 const Recipes = props => (
   <div className="container">
@@ -15,7 +16,10 @@ const Recipes = props => (
                             Publisher:<span>{recipe.publisher}</span>
                         </p>
                     </div>
-                    <button className="recipe_button">View Recipe</button>
+                        <button className="recipe_button"><Link to={{
+                            pathName:`/recipe/${recipe.recipe_id}`,
+                            state:{recipe: recipe.title}
+                        }}>View Recipe</Link></button>
                 </div>
             </div>
         )

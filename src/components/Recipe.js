@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Recipe = () => (
-    <div>
-        Recipe Component!
-    </div>
-)
+class Recipe extends Component{
+    render(){
+        return(
+            <div>
+                Recipe Component;
+            </div>
+        );
+    }
+}
 
 export default Recipe;
