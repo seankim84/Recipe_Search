@@ -44,14 +44,28 @@
   color: white;
 }
 
-.recipes {
+.row {
   display: grid;
+  grid-template-columns: repeat(2,1fr);
   width:100%;
-  height: auto;
-  grid-template-columns: repeat(2, 1fr);
+  height: 50vh;
 }
 
-.recipes img{
-  width:80%;
-  height: auto;
+.recipes {
+  width:100%;
+  height: 90%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
 }
+
+.recipe_box {
+  border: 1px solid black;
+}
+
+.recipe_img {
+  width:90%;
+  height: 45vh;
+}
+

@@ -28,8 +28,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Recipe Search</h1>
         </header>
-        <Form getRecipe={this.getRecipe}/>
-        <Recipes recipes={this.state.recipes}/>
+        <Form getRecipe={this.getRecipe} />
+        <Recipes recipes={this.state.recipes} />
       </div>
     );
   }
