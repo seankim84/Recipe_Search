@@ -10,12 +10,11 @@ class Recipe extends Component{
     state = {
             activeRecipe: []
         }
-        componentDidMount = async (e) =>{
+        componentDidMount = async () =>{
             const title = this.props.location.state.recipe;
-            e.preventDefault()
             await Axios.get(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${title}&count=30`)
-            .then(res => res.this.setState({
-                activeRecipe:res.data.recipes
+            .then(res => this.setState({
+                activeRecipe:res.data.recipes[0]
             }))
             .catch(err => console.log(err))
         }
@@ -33,7 +32,9 @@ class Recipe extends Component{
                     <p className="active=recipe-website">
                         WebSite:<span><a href={recipe.publisher_url}>{recipe.publisher_url}</a></span>
                     </p>
-                    <button className="active-recipe-button"><Link to="/">Go Home</Link></button>
+                    <button className="active-recipe-button">
+                        <Link to="/">Go Home</Link>
+                    </button>
                 </div>
                 }
             </div>

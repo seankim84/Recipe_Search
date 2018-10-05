@@ -6,9 +6,7 @@ import Recipes from './components/Recipes';
 
 const API_KEY = "f1288db264f906b3ea44e6e21d4a2f59";
 
-
 class App extends Component {
-
   state = {
     recipes: []
   }
@@ -20,18 +18,6 @@ class App extends Component {
       `https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=30`)
     .then(res => this.setState({recipes: res.data.recipes}))
     .catch(err => console.log(err))
-  }
-
-  componentDidMount = () => {
-    const json = localStorage.getItem("recipes");
-    const recipes = JSON.parse(json);
-    this.setState({ recipes: recipes });
-  }
-
-  componentDidUpdate = () => {
-    const recipes = JSON.stringify(this.state.recipes);
-    localStorage.setItem('recipes', recipes);
-
   }
 
   render() {
