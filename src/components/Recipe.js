@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
-
-
 const API_KEY = 'f1288db264f906b3ea44e6e21d4a2f59';
 
 class Recipe extends Component{
